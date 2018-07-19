@@ -1,7 +1,9 @@
-hash_person = { firstname: "Leudis", lastname: "Jimenez", age: "31", gender: "M" }
+hash_person = { firstname: "Leudis", lastname: "Jimenez", age: "31", comuna: "santiago", gender: "M" }
 arreglo = []
 arreglo.push(hash_person)
 
+exit = false
+until exit
 puts '******************** MENU *********************'
 puts '1 .- Agregar persona'
 puts '2 .- Editar una persona'
@@ -14,10 +16,8 @@ puts '8 .- Consultar por el promedio de las edades'
 puts '9 .- Obtener el listado de personas por género'
 puts '10 .- SALIR'
 puts '****************** END MENU ********************'
-
 option = gets.chomp.to_i
 
-while option != 10
   case option
   when 1
     puts "Ingrese Nombre: "
@@ -26,11 +26,20 @@ while option != 10
     apellido = gets.chomp.capitalize
     puts "Ingrese Edad "
     edad = gets.chomp.to_i
+    puts "Ingrese su Comuna: "
+    comuna = gets.chomp.capitalize
     puts "ingresa la letra correspondiente a tu genero (M o F)"
     genero = gets.chomp.downcase
     hash_temp = {firstname: "#{nombre}", lastname: "#{apellido}", age: "#{edad}", gender: "#{genero}"}
     arreglo.push(hash_temp)
-    
+  
+  puts '\n*****************EXITO*********************'      
+        puts '*****RESUMEN*****'
+        puts "Nombre: #{nombre}"
+        puts "Edad : #{edad}"
+        puts "Comuna: #{comuna}"
+        puts "Género: #{genero}"
+  puts '\n******************************************'
   when 2
   when 3
   when 4
